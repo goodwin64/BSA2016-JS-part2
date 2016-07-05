@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.col-4 {
+	width: 33.33%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.gallery-elem {
+	float: left;
+}
+
+.gallery-elem-img > img {
+	width: 100%;
+}
