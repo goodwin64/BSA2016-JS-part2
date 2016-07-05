@@ -45,4 +45,16 @@ git add gallery.html css/style.css
 git commit -m "0-4: add css-rules to gallery elems"
 
 
+# merge df1 + df2, when conflict - use OURS (dev-f1) branch
+git merge -Xours develop-feature2
+
+
+# merge
+git checkout develop
+git merge develop-feature1
+git checkout master
+git merge develop
+git tag -a v1.0 -m 'release 1'
+
+
 # TODO: other tasks
