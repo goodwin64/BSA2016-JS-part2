@@ -57,4 +57,13 @@ git merge develop
 git tag -a v1.0 -m 'release 1'
 
 
+# task 1-1
+git log develop-feature1 --pretty=format:"%s [%an]" --since="3 hours ago" --date-order
+# task 1-2
+# IDK how to extract task number :(
+# I found only this command, it outputs the first lexema (task number):
+# git log --format=%s | cut -f 1 -d ' ' | sed 's/\(.*\)/\1/'
+git log master develop --pretty=format:"%cd: %s [%an]" --date-order --graph --date=short
+
+
 # TODO: other tasks
