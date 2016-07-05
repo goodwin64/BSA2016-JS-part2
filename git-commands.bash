@@ -35,7 +35,7 @@ git checkout develop # it's my mistake, I forgot this action, so "develop-featur
 # create branch "develop-feature2" and make there 2 commits:
 # 	1) add images and their paths to gallery.html
 # 	2) add css rules
-git checkout -b develop-feature1
+git checkout -b develop-feature2
 subl gallery.html  # add paths to images
 git add gallery.html images/*
 git commit -m "0-4: add images and their paths to gallery"
