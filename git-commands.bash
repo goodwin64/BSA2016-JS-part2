@@ -49,12 +49,16 @@ git commit -m "0-4: add css-rules to gallery elems"
 git merge -Xours develop-feature2
 
 
-# merge
+# task 0-1
 git checkout develop
 git merge develop-feature1
+# task 0-2
 git checkout master
 git merge develop
 git tag -a v1.0 -m 'release 1'
+# task 0-3
+git branch -d develop-feature2
+git push origin --delete develop-feature2
 
 
 # task 1-1
