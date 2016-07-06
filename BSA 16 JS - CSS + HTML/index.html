@@ -7,22 +7,32 @@
 </head>
 <body>
 	<header>
-		
+		img[header-image.png alt="Header image"]+h1{Header text, justify: center}
 	</header>
 
 	
 	<aside>
-		
+		#menu>.menu-elem*5>p{Menu elem #$, justify: left}
 	</aside>
 	
 	
 	<div id="content">
-		
+		<div id="content-part1">
+			.content-part1-elem*6>h3{Header $}+p{Justify: both horizontally and vertically}
+		</div>
+		<div id="content-part2">
+			.content-part2-elem*3>h3{Header $}+p{Justify: only vertically}
+		</div>
 	</div>
 	
 	
 	<footer>
-		
+		<div id="footer-part1">
+			.footer-part1-elem*3>p{Multi-line text #$}*2
+		</div>
+		<div id="footer-part2">
+			.footer-part2-elem>p{Justify: both horizontally and vertically}
+		</div>
 	</footer>
 </body>
 </html>
