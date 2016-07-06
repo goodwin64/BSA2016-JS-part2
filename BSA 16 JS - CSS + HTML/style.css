@@ -1,0 +1,14 @@
+/* Written via SCSS */
+header .header-image-wrapper {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+header .header-image-wrapper img {
+  width: 100%;
+}
+header h1 {
+  padding-left: 125px;
+  height: 100px;
+  line-height: 100px;
+}

@@ -1,0 +1,33 @@
+/* Written via SCSS */
+
+header {
+	$square-image-size: 100px;
+
+	.header-image-wrapper {	
+		float: left;
+		width: $square-image-size;
+		height: $square-image-size;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	h1 {
+		padding-left: $square-image-size + 25px;
+		height: $square-image-size;
+		line-height: $square-image-size;
+	}
+}
+
+aside {
+
+}
+
+#content {
+
+}
+
+footer {
+
+}
