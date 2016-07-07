@@ -1,4 +1,4 @@
-Example link: [codepen](https://codepen.io/goodwin64/pen/grxwKX)
+Example links: [codepen](https://codepen.io/goodwin64/pen/grxwKX), [jsbin](http://output.jsbin.com/bonawaruye)
 
 # Requirements:
 1) Шапка макета состоит из двух частей - картинка и текст. Текст должен быть вертикально отцентрирован.

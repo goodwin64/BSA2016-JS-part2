@@ -1,9 +1,96 @@
-/* Written via SCSS */
+// ------------------------------ reset (or maybe via @import ?)
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+// ------------------------------ global variables
+
+$height-both-menu-and-content: 500px;
+$content-height: $height-both-menu-and-content;
+$menu-height: $height-both-menu-and-content;
+
+$menu-width: 200px;
+
+$content-part1-elem-width: 200px;
+
+$standard-border: 2px solid black;
+
+
+// ------------------------------ mixins
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+
+// ------------------------------ abstract (not in HTML) classes
+
+.main-page-element {
+	border:	$standard-border;
+}
+
+.without-top-bottom-borders {
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.standard-padding {
+	padding: 10px;
+}
+
+.standard-margin {
+	margin: 10px;
+}
+
+.col-4 {
+	width: 33.33%;
+}
+
+
+// ------------------------------ page structure
+
+.text-container {
+	background: rgba(50%, 50%, 100%, 0.35);
+}
+
+.with-ribbon {
+	position: relative;
+	overflow: hidden;
+
+	&:after {
+		content: 'Ribbon';
+		display: block;
+		width: 150px;
+		height: 20px;
+		position: absolute;
+		transform: rotate(45deg);
+		background: #f00;
+		color: #fff;
+		text-align: center;
+		line-height: 20px;
+		right: -50px;
+		top: 20px;
+	}
+}
+
+body {
+	background: url(page-bg.png);
+}
 
 header {
+	@extend .main-page-element;
 	$square-image-size: 100px;
+	overflow: hidden;
 
-	.header-image-wrapper {	
+	.header-image-wrapper {
+		@extend .standard-padding;
 		float: left;
 		width: $square-image-size;
 		height: $square-image-size;
@@ -14,20 +101,86 @@ header {
 	}
 
 	h1 {
+		@extend .standard-padding;
 		padding-left: $square-image-size + 25px;
 		height: $square-image-size;
 		line-height: $square-image-size;
 	}
 }
 
-aside {
+#menu {
+	@extend .main-page-element, .without-top-bottom-borders;
 
+	height: $menu-height;
+	width: $menu-width;
+	float: left;
+	border-right: 0;
+
+	.menu-elem {
+		@extend .standard-padding;
+		text-align: left;
+	}
 }
 
 #content {
+	@extend .main-page-element, .without-top-bottom-borders;
 
+	height: $content-height;
+	overflow: auto; // By default, as "hidden"; when content is gt block size - as "scroll"
+
+	#content-part1 {
+		@include flexbox();
+		flex-flow: row wrap;
+		justify-content: space-around;
+
+		.content-part1-elem {
+			@extend .standard-padding, .standard-margin;
+
+			width: $content-part1-elem-width;
+			min-width: $content-part1-elem-width; // fixed width
+			text-align: center;
+		}
+	}
+
+	#content-part2 {
+		overflow: hidden; // without this prop the "height" become 0 (inside this block there is floating)
+		margin: 0 auto;
+
+		.content-part2-elem {
+			@extend .standard-padding;
+
+			display: inline-block;
+			width: 27.3%; // "0.3" is to crop white space created by "display: inline-block;"
+			margin: 5px 1.5%;
+			padding: 5px 1.5%;
+			vertical-align: middle;
+			// by default, width is flexible (elastic)
+		}
+	}
 }
 
 footer {
+	@extend .main-page-element;
 
+	#footer-part1 {
+		text-align: center;
+		vertical-align: middle;
+		overflow: hidden; // the same as in #content-part2
+
+		.footer-part1-elem {
+			@extend .col-4; // or maybe it should be in HTML? ;)
+
+			float: left;
+		}
+	}
+
+	#footer-part2 {
+		text-align: center;
+		vertical-align: middle;
+		border-top: $standard-border;
+
+		.footer-part2-elem {
+			@extend .standard-padding;
+		}
+	}
 }
