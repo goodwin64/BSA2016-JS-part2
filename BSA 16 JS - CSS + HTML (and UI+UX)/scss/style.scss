@@ -3,6 +3,7 @@
 @import "reset";
 @import "media-queries";
 @import "media-breakpoints";
+@import "animations";
 @import url(https://fonts.googleapis.com/css?family=Lobster); // header font
 
 
@@ -222,6 +223,7 @@ footer {
 
 		.footer-part2-elem {
 			@extend .standard-padding;
+			position: relative;
 		}
 	}
 }
