@@ -39,7 +39,8 @@ $standard-border: 2px solid black;
 // ------------------------------ abstract (not in HTML) classes
 
 .main-page-element {
-	border:	$standard-border;
+	border-top:	$standard-border;
+	border-bottom:	$standard-border;
 }
 
 .without-top-bottom-borders {
@@ -145,8 +146,8 @@ header {
 #menu {
 	@extend .main-page-element, .without-top-bottom-borders;
 
-	height: $menu-height;
-	width: $menu-width;
+	// height: $menu-height;
+	// width: $menu-width;
 	float: left;
 	border-right: 0;
 
@@ -159,7 +160,7 @@ header {
 #content {
 	@extend .main-page-element, .without-top-bottom-borders;
 
-	height: $content-height;
+	// height: $content-height;
 	overflow: auto; // By default, as "hidden"; when content is gt block size - as "scroll"
 
 	#content-part1 {
@@ -170,9 +171,13 @@ header {
 		.content-part1-elem {
 			@extend .standard-padding, .standard-margin;
 
-			width: $content-part1-elem-width;
-			min-width: $content-part1-elem-width; // fixed width
+			// width: $content-part1-elem-width;
+			// min-width: $content-part1-elem-width; // fixed width
 			text-align: center;
+
+			img {
+				width: 100%;
+			}
 		}
 	}
 

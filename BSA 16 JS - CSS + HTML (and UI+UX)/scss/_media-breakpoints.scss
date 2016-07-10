@@ -1,7 +1,72 @@
+$height-both-menu-and-content: 500px;
+$content-height: $height-both-menu-and-content;
+$menu-height: $height-both-menu-and-content;
+
+$content-part1-elem-width: 200px;
+
 /* For smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-height: 680px) {
+	[class*="col-"] {
+		width: 100%;
+	}
+
 	#header-search-field {
 		clear: left;
 		width: 100%;
+	}
+
+	#menu {
+		ul {
+			li {
+				display: block;
+				float: left;
+			}
+		}
+
+		&:after {
+			clear: left;
+		}
+	}
+
+	#content {
+		.content-part1-elem {
+			width: 100%;
+		}
+	}
+}
+
+
+/* For laptops 768- */
+@media only screen and (max-width: 768px) {
+	#header-search-field {
+		clear: left;
+		width: 100%;
+	}
+
+	#header-logo-with-slogan {
+		width: 100%;
+	}
+
+	#content {
+		.content-part1-elem {
+			width: 30%;
+		}
+	}
+}
+
+
+/* 768+ */
+@media only screen and (min-width: 768px) {
+	#menu {
+		// height: $menu-height; // it's better without this rule (static height isn't useful)
+	}
+
+	#content {
+		// height: $content-height; // it's better without this rule (static height isn't useful)
+
+		.content-part1-elem {
+			width: $content-part1-elem-width;
+			min-width: $content-part1-elem-width; // fixed width
+		}
 	}
 }

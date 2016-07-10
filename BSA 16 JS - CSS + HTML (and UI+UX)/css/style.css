@@ -82,11 +82,40 @@
     width: 100%; } }
 /* For smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-height: 680px) {
+  [class*="col-"] {
+    width: 100%; }
+
   #header-search-field {
     clear: left;
+    width: 100%; }
+
+  #menu ul li {
+    display: block;
+    float: left; }
+  #menu:after {
+    clear: left; }
+
+  #content .content-part1-elem {
     width: 100%; } }
+/* For laptops 768- */
+@media only screen and (max-width: 768px) {
+  #header-search-field {
+    clear: left;
+    width: 100%; }
+
+  #header-logo-with-slogan {
+    width: 100%; }
+
+  #content .content-part1-elem {
+    width: 30%; } }
+/* 768+ */
+@media only screen and (min-width: 768px) {
+  #content .content-part1-elem {
+    width: 200px;
+    min-width: 200px; } }
 .main-page-element, header, #menu, #content, footer {
-  border: 2px solid black; }
+  border-top: 2px solid black;
+  border-bottom: 2px solid black; }
 
 .without-top-bottom-borders, #menu, #content {
   border-top: 0;
@@ -158,15 +187,12 @@ header {
         width: 100%; }
 
 #menu {
-  height: 500px;
-  width: 200px;
   float: left;
   border-right: 0; }
   #menu .menu-elem {
     text-align: left; }
 
 #content {
-  height: 500px;
   overflow: auto; }
   #content #content-part1 {
     display: -webkit-box;
@@ -177,9 +203,9 @@ header {
     flex-flow: row wrap;
     justify-content: space-around; }
     #content #content-part1 .content-part1-elem {
-      width: 200px;
-      min-width: 200px;
       text-align: center; }
+      #content #content-part1 .content-part1-elem img {
+        width: 100%; }
   #content #content-part2 {
     overflow: hidden;
     margin: 0 auto; }
