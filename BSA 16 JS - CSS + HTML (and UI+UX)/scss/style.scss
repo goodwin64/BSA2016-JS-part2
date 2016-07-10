@@ -1,9 +1,8 @@
-// ------------------------------ reset (or maybe via @import ?)
+// ------------------------------ imports
 
-* {
-	margin: 0;
-	padding: 0;
-}
+@import "reset";
+@import "media-queries";
+@import "media-breakpoints";
 
 
 // ------------------------------ global variables
@@ -27,6 +26,13 @@ $standard-border: 2px solid black;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
+}
+
+@mixin transition($transition) {
+	-moz-transition:	$transition;
+	-o-transition:		$transition;
+	-webkit-transition:	$transition;
+	transition:			$transition;
 }
 
 
@@ -89,22 +95,50 @@ header {
 	$square-image-size: 100px;
 	overflow: hidden;
 
-	.header-image-wrapper {
-		@extend .standard-padding;
+	#header-logo-with-slogan {
 		float: left;
-		width: $square-image-size;
-		height: $square-image-size;
+		overflow: hidden;
 
-		img {
-			width: 100%;
+		.header-image-wrapper {
+			@extend .standard-padding;
+			float: left;
+			width: $square-image-size;
+			height: $square-image-size;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.header-maintext-wrapper {
+			overflow: hidden;
+
+			h1 {
+				@extend .standard-padding;
+				height: $square-image-size;
+				line-height: $square-image-size;
+			}
 		}
 	}
 
-	h1 {
-		@extend .standard-padding;
-		padding-left: $square-image-size + 25px;
-		height: $square-image-size;
-		line-height: $square-image-size;
+	#header-search-field {
+		display: inline-block;
+
+		input[type=text] {
+			box-sizing: border-box;
+			width: 50%;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
+			background: #fff url('http://www.w3schools.com/howto/searchicon.png') 10px 10px no-repeat;
+			padding: 12px 20px 12px 40px;
+			@include transition(width 0.4s ease-in-out);
+
+			// When the input field gets focus, change its width
+			&:focus {
+				width: 100%;
+			}
+		}
 	}
 }
 

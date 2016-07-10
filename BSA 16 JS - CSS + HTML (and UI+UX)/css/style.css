@@ -2,6 +2,89 @@
   margin: 0;
   padding: 0; }
 
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%; }
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-m-1 {
+    width: 8.33%; }
+
+  .col-m-2 {
+    width: 16.66%; }
+
+  .col-m-3 {
+    width: 25%; }
+
+  .col-m-4 {
+    width: 33.33%; }
+
+  .col-m-5 {
+    width: 41.66%; }
+
+  .col-m-6 {
+    width: 50%; }
+
+  .col-m-7 {
+    width: 58.33%; }
+
+  .col-m-8 {
+    width: 66.66%; }
+
+  .col-m-9 {
+    width: 75%; }
+
+  .col-m-10 {
+    width: 83.33%; }
+
+  .col-m-11 {
+    width: 91.66%; }
+
+  .col-m-12 {
+    width: 100%; } }
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%; }
+
+  .col-2 {
+    width: 16.66%; }
+
+  .col-3 {
+    width: 25%; }
+
+  .col-4, footer #footer-part1 .footer-part1-elem {
+    width: 33.33%; }
+
+  .col-5 {
+    width: 41.66%; }
+
+  .col-6 {
+    width: 50%; }
+
+  .col-7 {
+    width: 58.33%; }
+
+  .col-8 {
+    width: 66.66%; }
+
+  .col-9 {
+    width: 75%; }
+
+  .col-10 {
+    width: 83.33%; }
+
+  .col-11 {
+    width: 91.66%; }
+
+  .col-12 {
+    width: 100%; } }
+/* For smartphones */
+@media only screen and (min-device-width: 320px) and (max-device-height: 680px) {
+  #header-search-field {
+    clear: left;
+    width: 100%; } }
 .main-page-element, header, #menu, #content, footer {
   border: 2px solid black; }
 
@@ -9,7 +92,7 @@
   border-top: 0;
   border-bottom: 0; }
 
-.standard-padding, header .header-image-wrapper, header h1, #menu .menu-elem, #content #content-part1 .content-part1-elem, #content #content-part2 .content-part2-elem, footer #footer-part2 .footer-part2-elem {
+.standard-padding, header #header-logo-with-slogan .header-image-wrapper, header #header-logo-with-slogan .header-maintext-wrapper h1, #menu .menu-elem, #content #content-part1 .content-part1-elem, #content #content-part2 .content-part2-elem, footer #footer-part2 .footer-part2-elem {
   padding: 10px; }
 
 .standard-margin, #content #content-part1 .content-part1-elem {
@@ -43,16 +126,36 @@ body {
 
 header {
   overflow: hidden; }
-  header .header-image-wrapper {
+  header #header-logo-with-slogan {
     float: left;
-    width: 100px;
-    height: 100px; }
-    header .header-image-wrapper img {
-      width: 100%; }
-  header h1 {
-    padding-left: 125px;
-    height: 100px;
-    line-height: 100px; }
+    overflow: hidden; }
+    header #header-logo-with-slogan .header-image-wrapper {
+      float: left;
+      width: 100px;
+      height: 100px; }
+      header #header-logo-with-slogan .header-image-wrapper img {
+        width: 100%; }
+    header #header-logo-with-slogan .header-maintext-wrapper {
+      overflow: hidden; }
+      header #header-logo-with-slogan .header-maintext-wrapper h1 {
+        height: 100px;
+        line-height: 100px; }
+  header #header-search-field {
+    display: inline-block; }
+    header #header-search-field input[type=text] {
+      box-sizing: border-box;
+      width: 50%;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      background: #fff url("http://www.w3schools.com/howto/searchicon.png") 10px 10px no-repeat;
+      padding: 12px 20px 12px 40px;
+      -moz-transition: width 0.4s ease-in-out;
+      -o-transition: width 0.4s ease-in-out;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out; }
+      header #header-search-field input[type=text]:focus {
+        width: 100%; }
 
 #menu {
   height: 500px;
