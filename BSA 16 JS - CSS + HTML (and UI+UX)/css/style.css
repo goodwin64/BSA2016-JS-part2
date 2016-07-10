@@ -100,7 +100,7 @@
   #content .content-part1-elem {
     width: 100%; } }
 /* For laptops 768- */
-@media only screen and (min-device-width: 767px) {
+@media only screen and (max-width: 767px) {
   #header-search-field {
     clear: left;
     width: 100%; }
