@@ -3,6 +3,7 @@
 @import "reset";
 @import "media-queries";
 @import "media-breakpoints";
+@import url(https://fonts.googleapis.com/css?family=Lobster); // header font
 
 
 // ------------------------------ global variables
@@ -118,6 +119,7 @@ header {
 				@extend .standard-padding;
 				height: $square-image-size;
 				line-height: $square-image-size;
+				font-family: 'Lobster', cursive;
 			}
 		}
 	}

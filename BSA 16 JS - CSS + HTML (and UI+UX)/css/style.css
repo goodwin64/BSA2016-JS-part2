@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
 * {
   margin: 0;
   padding: 0; }
@@ -98,7 +99,7 @@
   #content .content-part1-elem {
     width: 100%; } }
 /* For laptops 768- */
-@media only screen and (max-width: 768px) {
+@media only screen and (min-device-width: 767px) {
   #header-search-field {
     clear: left;
     width: 100%; }
@@ -107,9 +108,9 @@
     width: 100%; }
 
   #content .content-part1-elem {
-    width: 30%; } }
+    width: 50%; } }
 /* 768+ */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-device-width: 768px) {
   #content .content-part1-elem {
     width: 200px;
     min-width: 200px; } }
@@ -168,7 +169,8 @@ header {
       overflow: hidden; }
       header #header-logo-with-slogan .header-maintext-wrapper h1 {
         height: 100px;
-        line-height: 100px; }
+        line-height: 100px;
+        font-family: 'Lobster', cursive; }
   header #header-search-field {
     display: inline-block; }
     header #header-search-field input[type=text] {

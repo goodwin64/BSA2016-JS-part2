@@ -37,7 +37,7 @@ $content-part1-elem-width: 200px;
 
 
 /* For laptops 768- */
-@media only screen and (max-width: 768px) {
+@media only screen and (min-device-width: 767px) {
 	#header-search-field {
 		clear: left;
 		width: 100%;
@@ -49,14 +49,14 @@ $content-part1-elem-width: 200px;
 
 	#content {
 		.content-part1-elem {
-			width: 30%;
+			width: 50%;
 		}
 	}
 }
 
 
 /* 768+ */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-device-width: 768px) {
 	#menu {
 		// height: $menu-height; // it's better without this rule (static height isn't useful)
 	}
